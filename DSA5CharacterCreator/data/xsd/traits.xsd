@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:complexType name="traits">
+    <xs:sequence>
+      <xs:element ref="trait" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="trait">
+    <xs:complexType mixed="true">
+      <xs:sequence minOccurs="0">
+        <xs:element ref="constraint" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute name="cost" type="xs:string"/>
+      <xs:attribute name="id" type="xs:string" use="required"/>
+      <xs:attribute name="maxlevel" type="xs:string"/>
+      <xs:attribute name="name" type="xs:string" use="required"/>
+      <xs:attribute name="type" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="constraint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="display-text" type="xs:string" minOccurs="0"/>
+        <xs:element name="condition">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="arg">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="id" type="xs:string"></xs:attribute>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string"></xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

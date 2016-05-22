@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:include schemaLocation="traits.xsd"/>
+  <xs:element name="quirks" type="traits">
+    <xs:unique name="unique-trait-uuid">
+      <xs:selector xpath="trait"/>
+      <xs:field xpath="@uuid"/>
+    </xs:unique>
+    <xs:unique name="unique-trait-name">
+      <xs:selector xpath="trait"/>
+      <xs:field xpath="@name"/>
+    </xs:unique>
+  </xs:element>
+</xs:schema>

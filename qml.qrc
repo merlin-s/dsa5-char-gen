@@ -1,0 +1,17 @@
+<RCC>
+    <qresource lang="qml" prefix="/">
+        <file>ui/main.qml</file>
+        <file>ui/TabWelcome.qml</file>
+        <file>ui/TabSpecies.qml</file>
+        <file>ui/TabTraits.qml</file>
+        <file>ui/ListDetailView.qml</file>
+        <file>ui/util.js</file>
+        <file>ui/Palette.qml</file>
+        <file>ui/qmldir</file>
+        <file>ui/components/qmldir</file>
+        <file>ui/components/SLabel.qml</file>
+        <file>ui/components/STabView.qml</file>
+        <file>ui/components/SText.qml</file>
+        <file>ui/components/STextField.qml</file>
+    </qresource>
+</RCC>

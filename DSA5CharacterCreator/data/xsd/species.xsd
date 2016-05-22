@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="species-list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="species" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="species">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="appearance"/>
+        <xs:element ref="point-modifiers"/>
+        <xs:element ref="usual-perks"/>
+        <xs:element ref="usual-quirks"/>
+        <xs:element ref="unusual-perks"/>
+        <xs:element ref="unusual-quirks"/>
+        <xs:element name="cultures" type="xs:string"/>
+        <xs:element name="talent-bonus" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="cost" type="xs:string" use="required"/>
+      <xs:attribute name="id" type="xs:string" use="required"/>
+      <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="appearance">
+    <xs:complexType>
+      <xs:sequence minOccurs="0">
+        <xs:element ref="height" minOccurs="0"/>
+        <xs:element ref="weight" minOccurs="0"/>
+        <xs:element ref="hair-colors" minOccurs="0"/>
+        <xs:element ref="eye-colors" minOccurs="0"/>
+        <xs:element ref="starting-ages" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="height">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="range"/>
+      </xs:sequence>
+      <xs:attribute name="formula" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="range">
+    <xs:complexType>
+      <xs:attribute name="max" type="xs:string" use="required"/>
+      <xs:attribute name="min" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="weight">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="range"/>
+      </xs:sequence>
+      <xs:attribute name="formula" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hair-colors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="hair-color" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="die" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hair-color">
+    <xs:complexType>
+      <xs:attribute name="name" type="xs:string" use="required"/>
+      <xs:attribute name="range" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eye-colors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="eye-color" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="die" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eye-color">
+    <xs:complexType>
+      <xs:attribute name="name" type="xs:string" use="required"/>
+      <xs:attribute name="range" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="starting-ages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="starting-age" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="starting-age">
+    <xs:complexType>
+      <xs:attribute name="value" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="point-modifiers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="LE-base"/>
+        <xs:element ref="SK-base"/>
+        <xs:element ref="Z-base"/>
+        <xs:element ref="GS-base"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LE-base">
+    <xs:complexType>
+      <xs:attribute name="value" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SK-base">
+    <xs:complexType>
+      <xs:attribute name="value" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Z-base">
+    <xs:complexType>
+      <xs:attribute name="value" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GS-base">
+    <xs:complexType>
+      <xs:attribute name="value" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="usual-perks">
+    <xs:complexType>
+      <xs:sequence minOccurs="0">
+        <xs:element ref="perk" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="perk">
+    <xs:complexType>
+      <xs:attribute name="ref" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="usual-quirks">
+    <xs:complexType>
+      <xs:sequence minOccurs="0">
+        <xs:element ref="quirk" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="quirk">
+    <xs:complexType>
+      <xs:attribute name="ref" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="unusual-perks">
+    <xs:complexType>
+      <xs:sequence minOccurs="0">
+        <xs:element ref="perk" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="unusual-quirks">
+    <xs:complexType>
+      <xs:sequence minOccurs="0">
+        <xs:element ref="quirk" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

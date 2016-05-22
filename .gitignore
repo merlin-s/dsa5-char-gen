@@ -60,3 +60,9 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+#PyCharm project files
+.idea/
+
+#Model files
+DSA5CharacterCreator/data/*.xml

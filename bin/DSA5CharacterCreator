@@ -1,0 +1,11 @@
+#!/bin/bash
+
+script=$(readlink -f $0)
+# Absolute path this script is in. /home/user/bin
+scriptpath=`dirname ${script}`
+
+pushd ${scriptpath}/.. > /dev/null
+
+#glxinfo | grep "OpenGL version string"
+
+pyrcc5 qml.qrc -o DSA5CharacterCreator/rc.py && /usr/bin/env python3 DSA5CharacterCreator
