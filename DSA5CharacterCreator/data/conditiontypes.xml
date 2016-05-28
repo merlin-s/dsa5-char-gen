@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<condition-types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/conditiontypes.xsd">
+  <condition-type id="traitStatusCheck">
+    <args>
+      <arg id="trait" type="Trait"/>
+      <arg id="traitStatus" type="TraitStatusEnum"/>
+      <arg id="relOp" type="RelOp"/>
+    </args>
+    <code><![CDATA[args.relOp.op(char.traitStatus[args.trait].value, args.traitStatus.value)]]></code>
+  </condition-type>
+  <condition-type id="traitLevelCheck">
+    <args>
+      <arg id="trait" type="Trait"/>
+      <arg id="traitLevel" type="int"/>
+      <arg id="relOp" type="RelOp"/>
+    </args>
+    <code><![CDATA[args.relOp.op(char.traitLevels[args.trait], args.traitLevel)]]></code>
+  </condition-type>
+</condition-types>

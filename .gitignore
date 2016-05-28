@@ -66,3 +66,6 @@ target/
 
 #Model files
 DSA5CharacterCreator/data/*.xml
+DSA5CharacterCreator/data/*.zip
+DSA5CharacterCreator/data/archive.py
+ui/i18n
