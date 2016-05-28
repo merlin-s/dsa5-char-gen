@@ -58,6 +58,10 @@ ApplicationWindow {
                 TabSpecies {}
             }
             Tab {
+                title: "Aussehen"
+                TabAppearance {}
+            }
+            Tab {
                 title: "Vorteile"
                 TabTraits {
                     model: PerkModel

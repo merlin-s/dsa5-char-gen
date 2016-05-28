@@ -2,6 +2,7 @@
     <qresource lang="qml" prefix="/">
         <file>ui/main.qml</file>
         <file>ui/TabWelcome.qml</file>
+        <file>ui/TabAppearance.qml</file>
         <file>ui/TabSpecies.qml</file>
         <file>ui/TabTraits.qml</file>
         <file>ui/ListDetailView.qml</file>

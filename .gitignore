@@ -65,7 +65,11 @@ target/
 .idea/
 
 #Model files
-DSA5CharacterCreator/data/*.xml
+DSA5CharacterCreator/data/perks.xml
+DSA5CharacterCreator/data/quirks.xml
+DSA5CharacterCreator/data/species.xml
+DSA5CharacterCreator/data/uuids.xml
 DSA5CharacterCreator/data/*.zip
+DSA5CharacterCreator/data/fill_id_uuid.py
 DSA5CharacterCreator/data/archive.py
-ui/i18n
+DSA5CharacterCreator/rc.py

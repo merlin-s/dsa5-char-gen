@@ -20,6 +20,17 @@ class NameValuePair(MagicObject):
         self.name = name
         self.value = value
 
+    def __str__(self):
+        return '%s: "%s"' % (self.name, self.value)
+
+
+def get_name_value_pair_list(parent, **kwargs):
+    ret = list()
+    for k, v in kwargs.items():
+        setattr(parent, k, v)
+        ret.append(NameValuePair(parent, name=tr(k), value=v))
+    return ret
+
 
 @freezeAttributeSet
 class Character(MagicObject):
@@ -40,6 +51,7 @@ class Character(MagicObject):
     title = magicProperty(str)
     socialStatus = magicProperty(str)
     basicData = magicProperty(QVariant)
+    appearance = magicProperty(QVariant)
 
     @classmethod
     def initClass(cls):
@@ -60,23 +72,23 @@ class Character(MagicObject):
         self.traitLevels = defaultdict(int)
         self.traitStatus = defaultdict(lambda: model.TraitStatusEnum.NORMAL)
         self.ap = 1000
-        basicData = dict(
+        self.basicData = get_name_value_pair_list(
+            self,
             family="",
             birthDate="",
             birthLocation="",
-            culture="",
-            height="6 Fuß",
-            weight="15 Stein",
             gender="männlich",
-            hairColor="rot",
-            eyeColor="grün",
             title="Horst",
             socialStatus="profi",
         )
-        self.basicData = list()
-        for k, v in basicData.items():
-            setattr(self, k, v)
-            self.basicData.append(NameValuePair(self, tr(k), v))
+        self.appearance = get_name_value_pair_list(
+            self,
+            culture="",
+            height="6 Fuß",
+            weight="15 Stein",
+            hairColor="rot",
+            eyeColor="grün",
+        )
         pass
 
     def characterCheck(self):
